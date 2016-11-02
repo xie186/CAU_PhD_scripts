@@ -1,0 +1,84 @@
+#!/usr/bin/perl -w
+use strict;use DBI;
+die "\n",usage(),"\n" unless @ARGV==7;
+my ($db,$h3k27,$h3k36,$h3k4,$h3k9,$pos,$out)=@ARGV;
+my ($driver,$dsn,$usr,$pswd)=("mysql","database=$db","root","123456");
+my $dbh=DBI->connect("dbi:$driver:$dsn",$usr,$pswd) or die "$DBI::errstr\n";
+
+my @chip=($h3k27,$h3k36,$h3k4,$h3k9);
+open OUT,"+>$out" or die;
+open POS,$pos or die "$!";
+my %meth_forw;my %meth_forw_nu;my $flag=1;
+while(my $line=<POS>){
+    print "$flag have been done\n" if $flag%5000==0;$flag++;
+    chomp $line;
+    my ($chr,$stt,$end,$gene,$strand)=(split(/\t/,$line));
+    $chr="chr".$chr;
+    my %hash;
+    for(my $j=0;$j < @chip;++$j){
+        my $row=$dbh->prepare(qq(select * from $chip[$j] where chrom="$chr" and pos>=$stt-1999 and pos<=$end+1999));
+           $row->execute();
+        my ($chrom,$pos,$depth)=(0,0,0);
+           $row->bind_columns(\$chrom,\$pos,\$depth);
+        while($row->fetch()){
+           $hash{"$chr\t$pos"}=$depth;
+        }
+        foreach(my $i=$stt-2000;$i<=$end+2000;++$i){
+            if(exists $hash{"$chr\t$i"}){
+                &cal($stt,$end,$strand,$i,$hash{"$chr\t$i"},$j);
+            }
+        }
+        %hash=();
+    }
+}
+
+foreach(sort keys %meth_forw){
+    for(my $i=0;$i< @chip;++$i){
+        $chip[$i]=${$meth_forw{$_}}[$i]/${$meth_forw_nu{$_}}[$i];
+    }
+    $_=~s/prom/-1/;
+    $_=~s/body/0/;
+    $_=~s/term/1/;
+    my $chip_dens=join("\t",@chip);
+    print OUT "$_\t$chip_dens\n";
+}
+close OUT;
+#system qq(sort -k1,1n -k2,2n $out >$out.res);
+
+sub cal{
+    my ($stt,$end,$strand,$pos1,$methlev,$chip_id)=@_;
+    my $unit=($end-$stt)/100;
+    my $keys=0;
+    if($strand eq '+'){
+        if($pos1<$stt){
+            $keys=int(($pos1-$stt)/100);
+            $keys="prom\t$keys";
+        }elsif($pos1>=$stt && $pos1<$end){
+            $keys=int (($pos1-$stt)/$unit);
+            $keys="body\t$keys";
+        }else{
+            $keys=int(($pos1-$end)/100);
+            $keys="term\t$keys";
+        }
+    }else{
+        if($pos1<=$stt){
+            $keys=int(($stt-$pos1)/100);
+            $keys="term\t$keys";
+        }elsif($pos1>$stt && $pos1<=$end){
+            $keys=int (($end-$pos1)/$unit);
+            $keys="body\t$keys";
+        }else{
+            $keys=int(($end-$pos1)/100);
+            $keys="prom\t$keys";
+        }
+    }
+    ${$meth_forw{$keys}}[$chip_id]+=$methlev;
+    ${$meth_forw_nu{$keys}}[$chip_id]++;
+}
+
+sub usage{
+    my $die=<<DIE;
+    perl *.pl <Tissue> <h3k27> <h3k36> <h3k4> <h3k9> <Genes> <OUTPUT>
+    This is to get the methylation distribution throughth gene
+DIE
+}

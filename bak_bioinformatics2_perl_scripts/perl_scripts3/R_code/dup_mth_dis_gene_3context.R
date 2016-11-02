@@ -1,0 +1,36 @@
+dup_mth_dis_gene_3context<-function(CG,CHG,CHH,pdf){
+    cg<-read.table(CG)
+    chg<-read.table(CHG)
+    chh<-read.table(CHH)
+     
+    par(mfrow=c(3,1),mar=c(3,4,2,1));
+    maxi<-max(cg[cg[,1]=="paired1_rpkm_big",][,4],cg[cg[,1]=="paired2_rpkm_small",][,4])
+    plot(cg[cg[,1]=="paired1_rpkm_big",][,4],type="l",col="red",ylim=c(0,maxi),ylab="Methylation Level(%)",main="CpG",axes=FALSE)
+    lines(cg[cg[,1]=="paired2_rpkm_small",][,4],col="blue")
+    abline(v=20.5,lty="dashed",col="grey")
+    abline(v=120.5,lty="dashed",col="grey")
+    axis(2)
+    axis(1,label=FALSE,tick=FALSE) 
+    mtext(c("Gene model"),side=1,line=1)
+    box()
+   
+    maxi<-max(chg[chg[,1]=="paired1_rpkm_big",][,4],chg[chg[,1]=="paired2_rpkm_small",][,4])
+    plot(chg[chg[,1]=="paired1_rpkm_big",][,4],type="l",col="red",ylim=c(0,maxi),ylab="Methylation Level(%)",main="CHG",axes=FALSE)
+    lines(chg[chg[,1]=="paired2_rpkm_small",][,4],col="blue")
+    abline(v=20.5,lty="dashed",col="grey")
+    abline(v=120.5,lty="dashed",col="grey") 
+    axis(2)
+    axis(1,label=FALSE,tick=FALSE)
+    mtext(c("Gene model"),side=1,line=1)
+    box()
+
+    maxi<-max(chh[chh[,1]=="paired1_rpkm_big",][,4],chh[chh[,1]=="paired2_rpkm_small",][,4])
+    plot(chh[chh[,1]=="paired1_rpkm_big",][,4],type="l",col="red",ylim=c(0,maxi),ylab="Methylation Level(%)",main="CHH",axes=FALSE)
+    lines(chh[chh[,1]=="paired2_rpkm_small",][,4],col="blue")
+    abline(v=20.5,lty="dashed",col="grey")
+    abline(v=120.5,lty="dashed",col="grey")
+    axis(2)
+    axis(1,label=FALSE,tick=FALSE)
+    mtext(c("Gene model"),side=1,line=1)
+    box()
+}

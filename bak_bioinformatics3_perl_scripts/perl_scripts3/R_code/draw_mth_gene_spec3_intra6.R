@@ -1,0 +1,22 @@
+draw_mth_gene_spec3_intra6<-function(ara,ara_te,rice,rice_te,zm,zm_te,contxt){
+    ara<-read.table(ara)
+    ara_te<-read.table(ara_te)
+    rice<-read.table(rice)
+    rice_te<-read.table(rice_te)
+    zm<-read.table(zm)
+    zm_te<-read.table(zm_te)
+    
+#    rang<-range(0,ara[,3],rice[,3],zm[,3])
+    rang<-range(0,zm[,3],rice[,3],ara[,3], zm_te[,3],rice_te[,3],ara_te[,3])
+    plot(ara[ara[,1] == 0,][,3],type="l",col="red",ylim=rang,ylab="",axes=FALSE,xlab="",main=contxt)
+    lines(rice[rice[,1] == 0,][,3],col="royalblue")
+    lines(zm[zm[,1] == 0,][,3],col="darkgreen")
+    lines(ara_te[ara_te[,1] == 0,][,3],col="red",lty="dashed")
+    lines(rice_te[rice_te[,1] == 0,][,3],col="royalblue",lty="dashed")
+    lines(zm_te[zm_te[,1] == 0,][,3],col="darkgreen",lty="dashed")
+    axis(2)
+    axis(1,label=FALSE,tick=FALSE) 
+    mtext(c("Gene"),side=1,line=0.5)
+    mtext(c("Methylation level(%)"),side=2,line=2)
+    box()
+}

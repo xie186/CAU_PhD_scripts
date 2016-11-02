@@ -1,0 +1,9 @@
+protein_content
+DTS
+Ear_height
+biological_yield
+ASI
+Cob_diameter
+Economic_coefficient
+PH_EH
+10_kernels_thickness

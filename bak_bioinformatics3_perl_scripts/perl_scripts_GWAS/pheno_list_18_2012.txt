@@ -1,0 +1,9 @@
+Total_leaf_number
+Leaf_angle_2
+Upper_leaf_number
+Cob_weight
+Tassel_branch_number
+Leaf_angle_1
+DTA
+Ear_length
+Leaf_length

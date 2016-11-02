@@ -1,0 +1,105 @@
+#!/usr/bin/perl
+
+# Calculate probabilities conforming to the binomial distribution.
+
+# Copyleft, T. J. Finney, 2002-11-17. Free for non-commercial use.
+
+# Set number of trials.
+$n = 10;
+
+# Set probability of a successful outcome.
+$p = 0.5;
+
+# Set confidence level.
+$c = 0.95;
+
+if (($p < 0) or (1 < $p)) {
+    die "Probabilities must be between 0 and 1"; 
+}
+
+if (($c < 0) or (1 < $c)) {
+    die "Probabilities must be between 0 and 1"; 
+}
+
+print "Binomial probabilities for $n trials (p = $p):\n";
+
+$sum = 0;
+$flag = 0;
+if ($n > 100) {
+    print "Number of trials > 100.\n";
+    print "Normal approximation used instead of binomial distribution.\n";
+    for ($k = 0; $k <= $n; $k++) {
+	$prob = &binomial_approx($k, $n, $p);
+	print "P($k):\t", $prob, "\n";
+	$sum += $prob;
+	if (($flag == 0) and ($sum > $c)) {
+	    $min = $k;
+	    $flag = 1;
+	}
+    }
+}
+else {
+    for ($k = 0; $k <= $n; $k++) {
+	$prob = &binomial($k, $n, $p);
+	print "P($k):\t", $prob, "\n";
+	$sum += $prob;
+	if (($flag == 0) and ($sum > $c)) {
+	    $min = $k;
+	    $flag = 1;
+	}
+    }
+}
+
+printf("Minimum significant level of agreement (confidence level = %d\%):\n", $c * 100);
+
+$min++;
+if ($min <= $n) {
+    printf("%d/%d (%.1f\%)\n", $min, $n, $min / $n * 100);
+}
+else {
+    print "none exists\n";
+}
+
+# Normal approximation of binomial distribution for large n.
+sub binomial_approx {
+    my $k = shift(@_);
+    my $n = shift(@_);
+    my $p = shift(@_);
+    my($sigma, $mu, $pi, $const, $exponent, $prob);
+
+    $mu = $n * $p;
+    $sigma = sqrt($mu * (1 - $p));
+    $pi = atan2(1, 1) * 4;
+    $const = 1 / ($sigma * sqrt(2 * $pi));
+    $exponent = -0.5 * (($k - $mu) / $sigma)**2;
+    $prob = $const * exp($exponent);
+
+    return $prob;
+}
+
+sub binomial {
+    my $k = shift(@_);
+    my $n = shift(@_);
+    my $p = shift(@_);
+    my $prob;
+
+    $prob = ($p**$k) * ((1 - $p)**($n - $k)) * &factorial($n) / (&factorial($k) * &factorial($n - $k));
+
+    return $prob;
+}
+
+sub factorial {
+    my $n = shift(@_);
+    my $fact = 1;
+
+    if (($n < 0) or (170 < $n)) {
+	die "Factorial out of range";
+    }
+
+    for($i = 1; $i <= $n; $i++) {
+	$fact *= $i;
+    }
+
+    return $fact;
+}
+
