@@ -1,0 +1,108 @@
+#1478096258
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186
+#1478096258
+cd bak_bioinformatics
+#1478096262
+mv ../bak_bioinformatics* ./
+#1478096263
+ls
+#1478096268
+git init
+#1478096271
+git remote add origin git@gitlab.com:PhD_scripts_backup/scripts_lailab_server.git
+#1478096280
+git add bak_bioinformatics*
+#1478096353
+git commit -m "add bak_bioinformatics*"
+#1478096360
+ls
+#1478096361
+pwd
+#1478096362
+ls
+#1478096362
+xie186 has exited /home/xie186/bak_bioinformatics for ..
+#1478097238
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186
+#1478097238
+cd bak_bioinformatics/
+#1478097239
+ls
+#1478097249
+git push -u origin master
+#1478111685
+ls
+#1478111693
+pwd
+#1478111694
+xie186 has exited /home/xie186/bak_bioinformatics for ..
+#1478111701
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186
+#1478111701
+cd /home/xie186/bak_bioinformatics
+#1478111707
+vi README
+#1478111856
+pwd
+#1478111857
+top -c
+#1478111859
+pwd
+#1478111943
+ls
+#1478111944
+pwd
+#1478111945
+ls
+#1478112899
+qstat -u xie186
+#1478112903
+xie186 has exited /home/xie186/bak_bioinformatics for /depot/bioinf/Projects/Kal
+#2018-04-08 Sun 22:39:04
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186
+#1523241544
+cd  ~/bak_bioinformatics/
+#1523241545
+ls
+#1523241548
+vi README 
+#1523241863
+git remote add origin https://github.com/xie186/phd_scripts_backup.git
+#1523241866
+git push -u origin master
+#1523241873
+ls
+#1523241878
+git remote -v
+#1523241893
+d8u -h 
+#1523241896
+du -h 
+#1523241975
+ls
+#2018-04-08 Sun 22:46:19
+xie186 has exited /home/xie186/bak_bioinformatics for bak_bioinformatics3_perl_scripts/
+#2018-07-17 Tue 15:48:30
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186
+#1531856910
+cd bak_bioinformatics/
+#1531856910
+ls
+#2018-07-17 Tue 15:48:36
+xie186 has exited /home/xie186/bak_bioinformatics for ..
+#2018-07-17 Tue 16:37:54
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186
+#1531859874
+cd bak_bioinformatics/
+#1531859875
+ls
+#1531859878
+hsi
+#1531860028
+ls
+#1531860032
+git remote -v
+#1531860034
+du -h 
+#1531860041
+git add 

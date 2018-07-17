@@ -1,0 +1,12 @@
+#2018-04-08 Sun 22:46:19
+xie186 has entered /home/xie186/bak_bioinformatics/bak_bioinformatics3_perl_scripts from /home/xie186/bak_bioinformatics
+#1523241979
+cd bak_bioinformatics3_perl_scripts/
+#1523241984
+ls
+#1523241990
+ls */*R
+#1523242006
+vi perl_scripts_gong/DMR_fisher_BH_correction.R 
+#1523242293
+ls
