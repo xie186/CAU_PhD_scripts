@@ -106,3 +106,43 @@ git remote -v
 du -h 
 #1531860041
 git add 
+#1531860042
+git add .
+#1531860045
+\
+#1531860063
+git commit -m "Add perl_scripts/ perl_scripts_gong/ perl_scripts_lab/ perl_scripts_phylo/" 
+#1531860067
+git push origin master
+#1531860082
+git remote -v
+#1531860128
+git push origin master
+#1531860136
+git push -f origin master
+#1531860142
+git push origin master
+#1531860225
+vi ~/.ssh/id_rsa.pub 
+#1531860245
+git push origin master
+#1531860250
+ls
+#1531860980
+pwd
+#1531863030
+ls
+#2018-07-17 Tue 17:30:32
+xie186 has exited /home/xie186/bak_bioinformatics for p
+#2018-07-17 Tue 17:30:32
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186
+#1531863032
+cd p
+#2018-07-17 Tue 17:30:33
+xie186 has exited /home/xie186/bak_bioinformatics for project_np/
+#2018-07-17 Tue 17:31:10
+xie186 has entered /home/xie186/bak_bioinformatics from /home/xie186/bak_bioinformatics/project_np
+#1531863070
+cd ..
+#1531863070
+ls

@@ -1,0 +1,18 @@
+#2018-07-17 Tue 17:30:42
+xie186 has entered /home/xie186/bak_bioinformatics/project_np/results/smRNAclus_4sam from /home/xie186/bak_bioinformatics/project_np/results
+#1531863042
+cd smRNAclus_4sam/
+#1531863043
+ls
+#1531863057
+rm smRNA_cluster_*
+#1531863058
+pwd
+#1531863059
+ls
+#1531863062
+git add .
+#1531863063
+ls
+#2018-07-17 Tue 17:31:05
+xie186 has exited /home/xie186/bak_bioinformatics/project_np/results/smRNAclus_4sam for ..
