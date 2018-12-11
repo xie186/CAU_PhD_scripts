@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+
+# use strict;
+# use warnings;
+
+die "Usage:perl snp_filter_5_windows.pl <in.put>" unless @ARGV==2;
+
+open SNP,$ARGV[0] or die "Cannot open:$!\n";
+
+open OUT,"+>$ARGV[1]" or die "Cannot open:$!\n";
+
+my @snp_array=<SNP>;
+my $length=@snp_array;
+print "$length\n";
+
+my @snp_filtered;
+my @windows_one;
+my @snp_neighbr;
+my $minus_neigh;
+# @array=qw(23 231 432);
+print "@array","\n";
+foreach(0..$length){
+      
+    @windows_one=split(/\s/,$snp_array[$_]);
+#    print $windows_one[0];
+#    print "@windows_one";
+    @snp_neighbr=split(/\s/,$snp_array[$_+1]);
+#    print "@snp_neighbr[2]";
+    
+    $minus_neigh=$snp_neighbr[1]-$windows_one[1];
+#    print "$minus_neifh";
+    
+    #define a windows of 5 to delete the negative SNP
+    if($windows_one[0] eq $snp_neighbr[0] && $minus_neigh<=4){ 
+        print "next\n";
+#        shift @snp_array;
+        next;
+     }else{
+        push(@snp_filtered,$snp_array[$_]);
+     }
+}
+print OUT @snp_filtered;
+close SNP;
+close OUT;
