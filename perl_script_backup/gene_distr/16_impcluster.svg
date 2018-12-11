@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="2000" width="5000" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<rect fill="#FFE6D5" height="400" stroke="3" width="4400" x="200" y="800" />
+	<line fill="#71C837" stroke="#71C837" stroke-width="3" x1="200" x2="4600" y1="800" y2="800" />
+	<text style="front: Arial; font-size: 65" x="200" y="780">criteria 1:MEG</text>
+	<line fill="#71C837" stroke="#71C837" stroke-width="3" x1="200" x2="4600" y1="900" y2="900" />
+	<text style="front: Arial; font-size: 65" x="200" y="880">criteria 1:PEG</text>
+	<line fill="#71C837" stroke="#71C837" stroke-width="3" x1="200" x2="4600" y1="1000" y2="1000" />
+	<text style="front: Arial; font-size: 65" x="200" y="980">Non-imp in both criteria</text>
+	<line fill="#71C837" stroke="#71C837" stroke-width="3" x1="200" x2="4600" y1="1100" y2="1100" />
+	<text style="front: Arial; font-size: 65" x="200" y="1080">criteria 2:MEG</text>
+	<line fill="#71C837" stroke="#71C837" stroke-width="3" x1="200" x2="4600" y1="1200" y2="1200" />
+	<text style="front: Arial; font-size: 65" x="200" y="1180">criteria 2:PEG</text>
+	<circle cx="242.258431622779" cy="1000" fill="black" r="10" />
+	<circle cx="272.887111309919" cy="1000" fill="black" r="10" />
+	<circle cx="273.124453186157" cy="1000" fill="black" r="10" />
+	<circle cx="283.115967293132" cy="1000" fill="black" r="10" />
+	<circle cx="290.126235881513" cy="1000" fill="black" r="10" />
+	<circle cx="296.343435273687" cy="1000" fill="black" r="10" />
+	<circle cx="315.157120585198" cy="1000" fill="black" r="10" />
+	<circle cx="332.05470440806" cy="1000" fill="black" r="10" />
+	<circle cx="365.496753652552" cy="1000" fill="black" r="10" />
+	<circle cx="808.145141661788" cy="1000" fill="black" r="10" />
+	<circle cx="814.831235980186" cy="1000" fill="black" r="10" />
+	<circle cx="819.769104771177" cy="1000" fill="black" r="10" />
+	<circle cx="850.444095068315" cy="1000" fill="black" r="10" />
+	<circle cx="1028.86729773644" cy="1000" fill="black" r="10" />
+	<circle cx="1136.49315537078" cy="1000" fill="black" r="10" />
+	<circle cx="1159.84528046205" cy="900" fill="#008080" r="13" />
+	<circle cx="1345.26717406606" cy="1000" fill="black" r="10" />
+	<circle cx="1387.48508390509" cy="1000" fill="black" r="10" />
+	<circle cx="1404.97312800542" cy="1000" fill="black" r="10" />
+	<circle cx="1414.93569798115" cy="1000" fill="black" r="10" />
+	<circle cx="1417.691179276" cy="1000" fill="black" r="10" />
+	<circle cx="1576.50762743641" cy="1000" fill="black" r="10" />
+	<circle cx="1598.17520408902" cy="1000" fill="black" r="10" />
+	<circle cx="1769.31606333502" cy="1000" fill="black" r="10" />
+	<circle cx="1847.47100653216" cy="1000" fill="black" r="10" />
+	<circle cx="2131.11191511476" cy="1000" fill="black" r="10" />
+	<circle cx="2254.82492089701" cy="1000" fill="black" r="10" />
+	<circle cx="2296.41763750107" cy="1000" fill="black" r="10" />
+	<circle cx="2312.85211522396" cy="1000" fill="black" r="10" />
+	<circle cx="2313.74938329266" cy="1000" fill="black" r="10" />
+	<circle cx="2340.99738844998" cy="1000" fill="black" r="10" />
+	<circle cx="2383.63209377899" cy="1000" fill="black" r="10" />
+	<circle cx="2402.49208970049" cy="1000" fill="black" r="10" />
+	<circle cx="2551.05073774644" cy="1000" fill="black" r="10" />
+	<circle cx="2617.16492234421" cy="1000" fill="black" r="10" />
+	<circle cx="2776.18397942335" cy="1000" fill="black" r="10" />
+	<circle cx="2848.11014557582" cy="1000" fill="black" r="10" />
+	<circle cx="3018.42899149437" cy="1000" fill="black" r="10" />
+	<circle cx="3138.05508594434" cy="1000" fill="black" r="10" />
+	<circle cx="3179.21364057967" cy="1000" fill="black" r="10" />
+	<circle cx="3491.93761224074" cy="1000" fill="black" r="10" />
+	<circle cx="3539.48703105574" cy="1000" fill="black" r="10" />
+	<circle cx="4153.32258892098" cy="1000" fill="black" r="10" />
+	<circle cx="4160.40232342435" cy="1000" fill="black" r="10" />
+	<circle cx="4259.73858186913" cy="1000" fill="black" r="10" />
+	<circle cx="4292.27178539242" cy="1000" fill="black" r="10" />
+	<circle cx="4550.91654222883" cy="1000" fill="black" r="10" />
+	<circle cx="200" cy="1200" fill="blue" r="10" />
+	<circle cx="344.98115342363" cy="1200" fill="purple" r="10" />
+	<circle cx="864.510942855075" cy="1200" fill="blue" r="10" />
+	<circle cx="886.11484241894" cy="1200" fill="blue" r="10" />
+	<circle cx="975.436431451746" cy="1200" fill="blue" r="10" />
+	<circle cx="1351.70434885572" cy="1200" fill="blue" r="10" />
+	<circle cx="1387.48508390509" cy="1200" fill="blue" r="10" />
+	<circle cx="1735.86822526428" cy="1200" fill="blue" r="10" />
+	<circle cx="2258.20559542683" cy="1200" fill="blue" r="10" />
+	<circle cx="2416.35632856852" cy="1200" fill="blue" r="10" />
+	<circle cx="2441.80400876218" cy="1200" fill="blue" r="10" />
+	<circle cx="2576.11635540762" cy="1200" fill="blue" r="10" />
+	<circle cx="2795.62864679608" cy="1200" fill="blue" r="10" />
+	<circle cx="4119.26692409402" cy="1200" fill="blue" r="10" />
+	<circle cx="4230.52237578692" cy="1200" fill="blue" r="10" />
+	<circle cx="4567.72729365795" cy="1200" fill="blue" r="10" />
+	<!-- 
+	Generated using the Perl SVG Module V2.50
+	by Ronan Oger
+	Info: http://www.roitsystems.com/
+ -->
+</svg>

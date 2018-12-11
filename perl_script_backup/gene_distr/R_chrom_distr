@@ -1,0 +1,58 @@
+#a is chromome length
+pdf("chr_distr.pdf",paper="default",width=12)
+
+plot(1,1,xlim=c(1,10),ylim=c(0,300),pch=".",ylab="Position (Mb)",xlab="Chromosome",cex.lab=1.5,cex.axis=1.3,bty="n")
+axis(1,c(1,3,5,7,9),cex.axis=1.3)
+a<-read.table("chrom_length");
+for(i in 1:10){rect(i-0.05,1,i+0.05,a[i,2]/1000000,col="gray")}
+#b is mat imprinted genes
+#c is pat imprinted genes
+b<-read.delim("imp_gene_IES_mat",header=FALSE)
+c<-read.delim("imp_gene_IES_pat",header=FALSE)
+segments(b[,2]-0.15,b[,3]/1000000,b[,2],b[,3]/1000000,col="red")
+segments(c[,2],c[,3]/1000000,c[,2]+0.15,c[,3]/1000000,col="blue")
+#points(b[,2]-0.05,b[,3]/1000000,pch=25,col="red",bg="red",cex=0.7)
+#points(c[,2]+0.05,c[,3]/1000000,pch=24,col="blue",bg="blue",cex=0.7)
+
+#d,e is imprinted non-coding mat and pat
+d<-read.delim("imp_nc_mat",header=FALSE)
+e<-read.delim("imp_nc_pat",header=FALSE)
+
+points(d[,2],d[,3]/1000000,pch=22,col="green",bg="green",cex=0.7)
+points(e[,2],e[,3]/1000000,pch=23,col="DarkViolet",bg="DarkViolet",cex=0.7)
+
+#make legend
+legend(8,280,"MEG",bty="n",pch=25,col="red",pt.bg="red")
+legend(8,265,"PEG",bty="n",pch=24,col="blue",pt.bg="blue")
+legend(8,250,"MNC",bty="n",pch=22,col="green",pt.bg="green")
+legend(8,235,"PNC",bty="n",pch=23,col="DarkViolet",pt.bg="DarkViolet")
+
+cluster<-read.delim("cluster_final",header=FALSE)
+
+library("IDPmisc")
+Arrows(cluster[,2]+0.25,(cluster[,3]+cluster[,4])/2000000,cluster[,2]+0.2,(cluster[,3]+cluster[,4])/2000000,open=FALSE,size=0.4,width=3)
+Arrows(2.25,-1+(210833720+211224640)/2000000,2.2,(210833720+211224640)/2000000,open=FALSE,size=0.4,width=3,)
+Arrows(2.25,1+(213781114+214626286)/2000000,2.2,(213781114+214626286)/2000000,open=FALSE,size=0.4,width=3,)
+
+Arrows(6.25,-1+(26101379+26821493)/2000000,6.2,(26101379+26821493)/2000000,open=FALSE,size=0.4,width=3,)
+Arrows(6.25,1+(27485295+28096365)/2000000,6.2,(27485295+28096365)/2000000,open=FALSE,size=0.4,width=3,)
+
+Arrows(3.25,-1+(227818214+227848904)/2000000,3.2,(227818214+227848904)/2000000,open=FALSE,size=0.4,width=3,)
+Arrows(3.25,1+(229039177+229092293)/2000000,3.2,(229039177+229092293)/2000000,open=FALSE,size=0.4,width=3,)
+
+
+dev.off()
+
+
+plot(1,1,xlim=c(1,10),ylim=c(0,300),pch=".",ylab="position (Mb)",xlab="chromosome",bty="n",axes=FALSE)
+axis(1,c(1,2,3,4,5,6,7,8,9,10))
+for(i in 1:10){rect(i-0.05,1,i+0.05,a[i,2]/1000000,col="gray")}
+points(d[,2]-0.05,d[,3]/1000000,pch=25,col="red")
+points(e[,2]+0.05,e[,3]/1000000,pch=24,col="blue")
+points(nc1[,2],nc1[,3]/1000000,pch=16)
+points(nc2[,2],nc2[,3]/1000000,pch=15)
+legend(8.5,293,"MEG",bty="n",pch=25,col="red",bg="red")
+legend(8.5,280,"PEG",bty="n",pch=24,col="blue",bg="blue")
+legend(8.5,267,"MNC",bty="n",pch=16)
+legend(8.5,254,"PNC",bty="n",pch=15)
+
