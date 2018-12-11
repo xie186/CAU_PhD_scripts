@@ -1,0 +1,1 @@
+$EMBOSS_HOME/bin/seqret fastq-illumina::q64.fastq fastq::q33.fastq

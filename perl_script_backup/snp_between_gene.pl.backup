@@ -1,0 +1,42 @@
+#!/usr/bin/perl -w
+
+#use <SNP><SNP_GENE> to extract the SNPs between genes;
+
+die "usage:perl *.pl <SNP><SNP_GENE><OUTPUT>" unless @ARGV==3;
+use strict;
+
+open SNP,$ARGV[0] or die;
+open GSNP,$ARGV[1] or die "cannor:$!";
+open NGSN,"+>$ARGV[2]" or die;
+
+my $snp;
+my @snp_gene=<GSNP>;
+my @snp_bw_gene;
+my $start;
+my $end;
+
+while ($snp=<SNP>){
+
+PATH:foreach my $snp_gene(@snp_gene){
+#       print "xxxxxxxxxxxxxxxxxxxxxxx\n";
+        if($snp eq $snp_gene){
+#             print "xxxxxxxxxxxxxxxxx\n";   
+
+             $snp=<SNP>;
+             next PATH;
+          }else{
+#             print "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n";
+             next;
+         }
+    }
+    $start=@snp_bw_gene;
+    push(@snp_bw_gene,$snp);
+    $end=@snp_bw_gene;
+#    print "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+  
+print NGSN @snp_bw_gene;
+
+close SNP;
+close GSNP;
+close NGSN;

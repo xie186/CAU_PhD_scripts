@@ -1,0 +1,17 @@
+#!/usr/bin/perl -w
+die("usage:perl *.pl <snp> <gene_chr> <OUT1> <OUT_2> \n") unless @ARGV==4;
+
+($snp,$gene_chr,$output1,$output2)=@ARGV;
+print "reading SNP\n";
+open F, $snp or die;
+open GEN,$gene_chr or die;
+while(<F>){
+        my @snp_line=split;
+        @chr=split(/chr/,$snp_line[1]);     
+        
+        
+        foreach $gene_line(<GEN>){
+            ($chr,$pos1,$pos2)=split;
+             $i=$chr[1]-$  
+        }
+}
