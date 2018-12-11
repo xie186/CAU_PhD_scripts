@@ -1,9 +1,17 @@
 #!/usr/bin/perl -w
+use strict;
 
-use Tie::File::AsHash;
+my @bb=<>;
 
-tie %hash, 'Tie::File::AsHash', 'test', split => ':' or die "Problem tying %hash: $!";
-
-foreach(keys %hash){
-    print "$_\t$hash{$_}\n";
+chomp @bb;
+my $len=@bb;
+print "$len\n";
+foreach(@bb){
+    print "$_\n";
 }
+my $aa='this is a baaby!';
+
+my $dig=$aa=~s/i(s)//g;
+
+print "$aa\t$dig\t$1\n";
+
